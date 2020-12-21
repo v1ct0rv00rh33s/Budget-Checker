@@ -1,0 +1,535 @@
+@font-face {
+    font-family: 'Circular';
+    font-weight: normal;
+    src: url(fonts/Circular\ Std\ Book.ttf)
+}
+
+@font-face {
+    font-family: 'Circular';
+    font-weight: bold;
+    src: url(fonts/Circular\ Std\ Bold.ttf)
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(241,242,247);
+    font-family: 'Circular';
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 90%;
+    width: 94%;
+}
+
+
+
+.budget-container {
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+
+
+.budget-header {
+    display: flex;
+    flex-direction: column;
+
+    height: 100%;
+    width: 40%;
+}
+
+.budget-header .balance {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+
+    height: 30%;
+    width: 100%;
+}
+
+.budget-header .balance .wrapper {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    background-color: white;
+
+    border-radius: 20px;
+
+    width: 91%;
+    height: 76%;
+
+    margin-right: 20px;
+    margin-bottom: 20px;
+
+    box-shadow: 0 5px 2px 0px rgb(215,218,232);
+}
+
+.budget-header .balance .wrapper .value {
+    font-weight: bold;
+    font-size: 50px;
+}
+
+.budget-header .balance .wrapper .title {
+    font-size: 20px;
+}
+
+.budget-header .account {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+
+    height: 70%;
+    width: 100%;
+}
+
+.budget-header .account .wrapper {
+    background-color: white;
+
+    border-radius: 20px;
+
+    width: 91%;
+    height: 90%;
+
+    margin-right: 20px;
+    margin-top: 20px;
+
+    box-shadow: 0 5px 2px 0px rgb(215,218,232);
+}
+
+.budget-header .account .wrapper .container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    width: 100%;
+    height: 70%;
+    
+}
+
+.budget-header .account .wrapper .container .chart {
+    width: 250px;
+    height: 250px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.budget-header .account .wrapper .chart canvas {
+    width: 80%;
+    height: 80%;
+}
+
+.budget-header .account .wrapper .income_outcome {
+    display: flex;
+    
+
+    width: 100%;
+    height: 30%;
+}
+
+.budget-header .account .wrapper .income_outcome .income {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 50%;
+    height: 100%;
+    
+    margin-left: 50px;
+}
+
+.budget-header .account .wrapper .income_outcome .income .income-total {
+    font-size: 30px;
+    font-weight: bold;
+    color: rgb(46,124,208);
+}
+
+.budget-header .account .wrapper .income_outcome .income .title {
+    font-size: 15px;
+    color: rgb(46,124,208);
+}
+
+.budget-header .account .wrapper .income_outcome .outcome {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 50%;
+    height: 100%;
+    
+    margin-right: 50px;
+}
+
+.budget-header .account .wrapper .income_outcome .outcome .outcome-total {
+    font-size: 30px;
+    font-weight: bold;
+    color: #f20505;
+}
+
+.budget-header .account .wrapper .income_outcome .outcome .title {
+    font-size: 15px;
+    color: #f20505;
+}
+
+
+
+.budget-dashboard {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    height: 100%;
+    width: 60%;
+}
+
+.budget-dashboard .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: white;
+
+    height: 92%;
+    width: 93.5%;
+
+    margin-left: 20px;
+
+    border-radius: 20px;
+
+    box-shadow: 0 5px 2px 0px rgb(215,218,232);
+}
+
+.budget-dashboard .wrapper .container {
+    
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    width: 60%;
+    height: 20%;
+}
+
+.budget-dashboard .wrapper .container .toggle {
+    display: flex;
+    justify-content: space-between;
+
+    width: 70%;
+    height: 40%;
+    margin: 0;
+}
+
+.budget-dashboard .wrapper .container .toggle div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    width: 30%;
+    border-radius: 100px;
+
+    font-weight: bold;
+
+    border: 3px solid transparent;
+}
+
+.budget-dashboard .wrapper .container .toggle div:hover {
+    
+    color: rgb(46,124,208);
+    cursor: pointer;
+}
+
+.active {
+    
+    color: rgb(46,124,208);
+    background-color: rgb(208,225,244) !important;
+    font-weight: bold;
+}
+
+#income {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    height: 80%;
+    
+}
+
+#income .list {
+    width: auto;
+    height: 75%;
+    
+    margin: 0;
+    padding: 0;
+
+    margin: 0 7%;
+
+    list-style: none;
+}
+
+#income .list li {
+    margin-bottom: 20px;
+
+    
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#income .list li #delete {
+    width: 30px;
+    height: 30px;
+    background-image: url(icons/delete.svg);
+    background-repeat: no-repeat;
+}
+
+#income .input {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    height: 25%;
+}
+
+#income .input .container {
+    display: flex;
+    justify-content:space-between;
+
+    width: 40%;
+    
+
+    margin-left: 55px;
+}
+
+#income .input .container input[type='text'] {
+    outline: none;
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid black;
+
+    width: 43%;
+
+    font-family: 'Circular';
+    font-size: 15px;
+}
+
+#income .input .container input[type='number'] {
+    outline: none;
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid black;
+
+    width: 43%;
+
+    font-family: 'Circular';
+    font-size: 15px;
+}
+
+#income .input .add-income {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: rgb(46,124,208);
+    border: 3px solid rgb(46,124,208);
+
+    border-radius: 50px;
+    padding: 15px 25px;
+
+    font-size: 15px;
+    font-weight: bold;
+    
+    margin-right: 50px;
+    margin-bottom: 20px;
+
+    cursor: pointer;
+}
+
+#income .input .add-income:hover {
+    background-color: rgb(46,124,208);
+    color: white;
+}
+
+
+
+
+
+#expense {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    height: 80%;
+    
+}
+
+#expense .list {
+    width: auto;
+    height: 75%;
+    
+    margin: 0;
+    padding: 0;
+
+    margin: 0 7%;
+
+    list-style: none;
+}
+
+#expense .list li {
+    margin-bottom: 20px;
+
+    
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#expense .list li #delete {
+    width: 30px;
+    height: 30px;
+    background-image: url(icons/delete.svg);
+    background-repeat: no-repeat;
+}
+
+
+
+#expense .input {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+
+    width: 100%;
+    height: 25%;
+}
+
+#expense .input .container {
+    display: flex;
+    justify-content:space-between;
+
+    width: 40%;
+
+    margin-left: 55px;
+}
+
+#expense .input .container input[type='text'] {
+    outline: none;
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid black;
+
+    width: 43%;
+
+    font-family: 'Circular';
+    font-size: 15px;
+}
+
+#expense .input .container input[type='number'] {
+    outline: none;
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid black;
+
+    width: 43%;
+
+    font-family: 'Circular';
+    font-size: 15px;
+}
+
+#expense .input .add-expense {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: rgb(46,124,208);
+    border: 3px solid rgb(46,124,208);
+
+    border-radius: 50px;
+    padding: 15px 25px;
+
+    font-size: 15px;
+    font-weight: bold;
+    
+    margin-right: 50px;
+    margin-bottom: 20px;
+
+    cursor: pointer;
+}
+
+#expense .input .add-expense:hover {
+    background-color: rgb(46,124,208);
+    color: white;
+}
+
+
+#all {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    height: 80%;
+    
+}
+
+#all .list {
+    width: auto;
+    height: 75%;
+    
+    margin: 0;
+    padding: 0;
+
+    margin-left: 7%;
+
+    list-style: none;
+}
+
+
+
+
+
+
+
+.hide {
+    display: none !important;
+}

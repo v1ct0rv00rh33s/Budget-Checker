@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'/>
+    <link rel='stylesheet' href='style.css'/>
+    <title>Victor's Budget Checker</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+
+<body>
+
+
+
+    <div class='budget-container'>
+
+        <div class='budget-header'>
+
+            <div class='balance'>
+                <div class='wrapper'>
+                    <div class='value'>$0</div>
+                    <div class='title'>Current Balance</div>
+                </div>
+            </div>
+            <div class='account'>
+                <div class='wrapper'>
+                    <div class='container'>
+                        <div class='chart'></div>
+                    </div>
+                    <div class='income_outcome'>
+                        <div class='income'>
+                            <div class='income-total'>$0</div>
+                            <div class='title'>Total Income</div>
+                        </div>
+                        <div class='outcome'>
+                            <div class='outcome-total'>$0</div>
+                            <div class='title'>Total Spending</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class='budget-dashboard'>
+            <div class='wrapper'>
+                <div class='container'>
+                    <div class="toggle">
+                        <div class="tab1">Expenses</div>
+                        <div class="tab2">Income</div>
+                        <div class="tab3 active">All</div>
+                    </div>
+                </div>
+
+                <div class="hide" id="income">
+                    <ul class="list">
+                    </ul>
+                    <div class="input">
+                        <div class='container'>
+                            <input type="text" id="income-title-input" name="title" placeholder="Enter Item Name">
+                            <input type="number" id="income-amount-input" name="amount" placeholder="Enter Amount">
+                        </div>
+                        <div class="add-income">Add Item</div>
+                    </div>
+                </div>
+
+                <div class="hide" id="expense">
+                    <ul class="list"></ul>
+                    <div class="input">
+                        <div class='container'>
+                            <input type="text" id="expense-title-input" name="title" placeholder="Enter Item Name">
+                            <input type="number" id="expense-amount-input" name="amount" placeholder="Enter Amount">
+                        </div>
+                        <div class="add-expense">Add Item</div>
+                    </div>
+                </div>
+
+                <div id="all">
+                    <ul class="list"></ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="chart.js"></script>
+    <script src="budget.js"></script>
+
+
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
