@@ -109,7 +109,6 @@ function deleteEntry(entry){
 }
 
 function editEntry(entry){
-    console.log(entry)
     let ENTRY = ENTRY_LIST[entry.id];
 
     if(ENTRY.type == "income"){
@@ -156,8 +155,8 @@ function showEntry(list, type, title, amount, id){
 
     const entry = ` <li id = "${id}" class="${type}">
                         <div class="entry">${title}: $${amount}</div>
-                        <div id="edit"></div>
-                        <div id="delete"></div>
+                        <div id="edit">Edit</div>
+                        <div id="delete">Delete</div>
                     </li>`;
 
     const position = "afterbegin";

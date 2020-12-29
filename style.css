@@ -6,14 +6,17 @@
 
 @font-face {
     font-family: 'Circular';
-    font-weight: bold;
-    src: url(fonts/Circular\ Std\ Bold.ttf)
+    font-weight: 700;
+    src: url(fonts/Circular\ Std\ 700.ttf)
 }
 
 
 
 
-
+:root {
+    --blue: rgb(46,124,208);
+    --purple: rgb(215,218,232);
+}
 
 
 
@@ -34,494 +37,541 @@
 
 
 html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    width: 100%;
-    background-color: rgb(241,242,247);
-    font-family: 'Circular';
-
     display: flex;
     justify-content: center;
     align-items: center;
+
+    margin: 0;
+    padding: 0;
+
+    height: 100%;
+    width: 100%;
+
+    background-color: rgb(241,242,247);
+
+    font-family: 'IBM Plex Sans';
+    font-weight: 500;
 }
 
 body {
     margin: 0;
     padding: 0;
-    height: 90%;
-    width: 94%;
+
+    height: 100%;
+    width: 100%;
 }
+
+
+
+
+
+
+
+
+
+
 
 
 
 .budget-container {
-    display: flex;
+    display: grid;
+    grid-template-columns: 35% 65%;
+
     height: 100%;
     width: 100%;
 }
+
+
+
+
+
 
 
 
 .budget-header {
-    display: flex;
-    flex-direction: column;
-
-    height: 100%;
-    width: 40%;
+    display: grid;
+    grid-template-rows: 30% 70%;
 }
+
+
+
+
+
 
 .budget-header .balance {
     display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-
-    height: 30%;
-    width: 100%;
-}
-
-.budget-header .balance .wrapper {
-    display: flex;
     flex-direction: column;
-
     justify-content: center;
     align-items: center;
 
+    margin: 40px 15px 15px 40px;
+
     background-color: white;
 
-    border-radius: 20px;
+    border-radius: 10px;
 
-    width: 91%;
-    height: 76%;
-
-    margin-right: 20px;
-    margin-bottom: 20px;
-
-    box-shadow: 0 5px 2px 0px rgb(215,218,232);
+    box-shadow: 0 3px 1px 0 var(--purple);
 }
 
-.budget-header .balance .wrapper .value {
-    font-weight: bold;
-    font-size: 50px;
+.budget-header .balance .value {
+    font-weight: 700;
+    font-size: 60px;
 }
 
-.budget-header .balance .wrapper .title {
+.budget-header .balance .title {
     font-size: 20px;
 }
 
+
+
+
+
+
+
+
 .budget-header .account {
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-start;
+    display: grid;
+    grid-template-rows: 13% 87%;
 
-    height: 70%;
-    width: 100%;
-}
+    margin: 15px 15px 40px 40px;
 
-.budget-header .account .wrapper {
     background-color: white;
 
-    border-radius: 20px;
+    border-radius: 10px;
 
-    width: 91%;
-    height: 90%;
-
-    margin-right: 20px;
-    margin-top: 20px;
-
-    box-shadow: 0 5px 2px 0px rgb(215,218,232);
-}
-
-.budget-header .account .wrapper .container {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-
-    width: 100%;
-    height: 70%;
-    
-}
-
-.budget-header .account .wrapper .container .chart {
-    width: 250px;
-    height: 250px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-}
-
-.budget-header .account .wrapper .chart canvas {
-    width: 80%;
-    height: 80%;
-}
-
-.budget-header .account .wrapper .income_outcome {
-    display: flex;
-    
-
-    width: 100%;
-    height: 30%;
-}
-
-.budget-header .account .wrapper .income_outcome .income {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    width: 50%;
-    height: 100%;
-    
-    margin-left: 50px;
-}
-
-.budget-header .account .wrapper .income_outcome .income .income-total {
-    font-size: 30px;
-    font-weight: bold;
-    color: rgb(46,124,208);
-}
-
-.budget-header .account .wrapper .income_outcome .income .title {
-    font-size: 15px;
-    color: rgb(46,124,208);
-}
-
-.budget-header .account .wrapper .income_outcome .outcome {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    width: 50%;
-    height: 100%;
-    
-    margin-right: 50px;
-}
-
-.budget-header .account .wrapper .income_outcome .outcome .outcome-total {
-    font-size: 30px;
-    font-weight: bold;
-    color: #f20505;
-}
-
-.budget-header .account .wrapper .income_outcome .outcome .title {
-    font-size: 15px;
-    color: #f20505;
+    box-shadow: 0 3px 1px 0 var(--purple);
 }
 
 
 
-.budget-dashboard {
+
+
+
+
+.budget-header .account .account-label {
     display: flex;
     justify-content: flex-start;
     align-items: center;
 
-    height: 100%;
-    width: 60%;
+    background-color: var(--blue);
+    color: white;
+
+    border-radius: 10px 10px 0 0;
+
+    padding-left: 25px;
+
+    font-weight: 600;
 }
 
-.budget-dashboard .wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 
-    background-color: white;
 
-    height: 92%;
-    width: 93.5%;
 
-    margin-left: 20px;
 
-    border-radius: 20px;
 
-    box-shadow: 0 5px 2px 0px rgb(215,218,232);
+.budget-header .account .grid-container {
+    display: grid;
+    grid-template-rows: 62% 38%;
 }
 
-.budget-dashboard .wrapper .container {
-    
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
 
-    width: 60%;
-    height: 20%;
-}
-
-.budget-dashboard .wrapper .container .toggle {
-    display: flex;
-    justify-content: space-between;
-
-    width: 70%;
-    height: 40%;
-    margin: 0;
-}
-
-.budget-dashboard .wrapper .container .toggle div {
+.budget-header .account .grid-container .chart {
     display: flex;
     justify-content: center;
     align-items: center;
-    
-    width: 30%;
-    border-radius: 100px;
 
-    font-weight: bold;
-
-    border: 3px solid transparent;
+    align-self: end;
 }
 
-.budget-dashboard .wrapper .container .toggle div:hover {
+.budget-header .account .chart canvas {
+
+    width: 200px;
+    height: 200px;
+}
+
+
+
+
+
+
+
+
+.budget-header .account .income_outcome {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.budget-header .account .income_outcome .income {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    color: var(--blue);
+}
+
+.budget-header .account .income_outcome .income .income-total {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.budget-header .account .income_outcome .income .title {
+    font-size: 15px;
+}
+
+.budget-header .account .income_outcome .outcome {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    color: #f20505;
+}
+
+.budget-header .account .income_outcome .outcome .outcome-total {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.budget-header .account .income_outcome .outcome .title {
+    font-size: 15px;
+}
+
+
+
+
+
+
+
+
+.budget-dashboard {
+    display: grid;
+    grid-template-rows: 9% 18% 73%;
+
+    margin: 40px 40px 40px 15px;
+
+    background-color: white;
+
+    border-radius: 10px;
+
+    box-shadow: 0 3px 1px 0 var(--purple);
+}
+
+.budget-dashboard .dash-label {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    background-color: var(--blue);
+    color: white;
+
+    font-weight: 600;
     
-    color: rgb(46,124,208);
+    border-radius: 10px 10px 0 0;
+
+    padding-left: 25px;
+}
+
+
+
+
+
+
+.budget-dashboard .toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.budget-dashboard .toggle div {
+    color: rgb(150,150,150);
+
+    border-radius: 10px;
+
+    padding: 15px 25px;
+
+    font-weight: 600;
+}
+
+.budget-dashboard .toggle div:hover {
+    color: var(--blue);
     cursor: pointer;
 }
 
 .active {
-    
-    color: rgb(46,124,208);
+    color: var(--blue) !important;
     background-color: rgb(208,225,244) !important;
-    font-weight: bold;
+    font-weight: 700;
 }
+
+
+
+
+
 
 #income {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: auto 25%;
 
-    width: 100%;
-    height: 80%;
-    
+    padding: 0 60px;
 }
+
+
+
+
 
 #income .list {
     width: auto;
-    height: 75%;
     
     margin: 0;
     padding: 0;
-
-    margin: 0 7%;
 
     list-style: none;
 }
 
 #income .list li {
-    margin-bottom: 20px;
-
-    
-
     display: flex;
-    justify-content: space-between;
     align-items: center;
+
+    margin-bottom: 15px;
+}
+
+#income .list li #edit {
+    padding: 10px 20px;
+
+    background-color: rgb(235,235,235);
+
+    border-radius: 10px;
+
+    margin-left: auto;
+    margin-right: 10px;
 }
 
 #income .list li #delete {
-    width: 30px;
-    height: 30px;
-    background-image: url(icons/delete.svg);
-    background-repeat: no-repeat;
+    padding: 10px 20px;
+
+    background-color:  #f20505;
+    color: white;
+
+    border-radius: 10px;
 }
+
+
+
+
+
 
 #income .input {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-
-    width: 100%;
-    height: 25%;
 }
 
-#income .input .container {
-    display: flex;
-    justify-content:space-between;
-
-    width: 40%;
-    
-
-    margin-left: 55px;
-}
-
-#income .input .container input[type='text'] {
+#income .input input {
     outline: none;
     border: none;
-    border-radius: 0;
-    border-bottom: 1px solid black;
 
-    width: 43%;
+    border-radius: 10px;
 
-    font-family: 'Circular';
-    font-size: 15px;
+    background-color: rgb(235,235,235);
+
+    width: 9vw;
+
+    padding: 10px 20px;
+
+    font-family: 'IBM Plex Sans';
+    font-weight: 500;
 }
 
-#income .input .container input[type='number'] {
-    outline: none;
-    border: none;
-    border-radius: 0;
-    border-bottom: 1px solid black;
+#income .input input::placeholder {
+    color: rgb(180,180,180);
+}
 
-    width: 43%;
-
-    font-family: 'Circular';
-    font-size: 15px;
+#income .input input[type='number'] {
+    margin-left: 15px;
 }
 
 #income .input .add-income {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    color: var(--blue);
 
-    color: rgb(46,124,208);
-    border: 3px solid rgb(46,124,208);
+    border: 3px solid var(--blue);
 
-    border-radius: 50px;
-    padding: 15px 25px;
+    border-radius: 10px;
 
-    font-size: 15px;
-    font-weight: bold;
-    
-    margin-right: 50px;
-    margin-bottom: 20px;
+    padding: 10px 20px;
+
+    margin-left: auto;
+
+    font-weight: 700;
 
     cursor: pointer;
 }
 
 #income .input .add-income:hover {
-    background-color: rgb(46,124,208);
+    background-color: var(--blue);
     color: white;
 }
+
+
+
+
+
 
 
 
 
 
 #expense {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: auto 25%;
 
-    width: 100%;
-    height: 80%;
-    
+    padding: 0 60px;
 }
+
+
+
+
 
 #expense .list {
     width: auto;
-    height: 75%;
     
     margin: 0;
     padding: 0;
-
-    margin: 0 7%;
 
     list-style: none;
 }
 
 #expense .list li {
-    margin-bottom: 20px;
-
-    
-
     display: flex;
-    justify-content: space-between;
     align-items: center;
+
+    margin-bottom: 15px;
+}
+
+#expense .list li #edit {
+    padding: 10px 20px;
+
+    background-color: rgb(235,235,235);
+
+    border-radius: 10px;
+
+    margin-left: auto;
+    margin-right: 10px;
 }
 
 #expense .list li #delete {
-    width: 30px;
-    height: 30px;
-    background-image: url(icons/delete.svg);
-    background-repeat: no-repeat;
+    padding: 10px 20px;
+
+    background-color:  #f20505;
+    color: white;
+
+    border-radius: 10px;
 }
+
+
+
 
 
 
 #expense .input {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    
-
-    width: 100%;
-    height: 25%;
 }
 
-#expense .input .container {
-    display: flex;
-    justify-content:space-between;
-
-    width: 40%;
-
-    margin-left: 55px;
-}
-
-#expense .input .container input[type='text'] {
+#expense .input input {
     outline: none;
     border: none;
-    border-radius: 0;
-    border-bottom: 1px solid black;
 
-    width: 43%;
+    border-radius: 10px;
 
-    font-family: 'Circular';
-    font-size: 15px;
+    background-color: rgb(235,235,235);
+
+    width: 9vw;
+
+    padding: 10px 20px;
+
+    font-family: 'IBM Plex Sans';
+    font-weight: 500;
 }
 
-#expense .input .container input[type='number'] {
-    outline: none;
-    border: none;
-    border-radius: 0;
-    border-bottom: 1px solid black;
+#expense .input input::placeholder {
+    color: rgb(180,180,180);
+}
 
-    width: 43%;
-
-    font-family: 'Circular';
-    font-size: 15px;
+#expense .input input[type='number'] {
+    margin-left: 15px;
 }
 
 #expense .input .add-expense {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    color: var(--blue);
 
-    color: rgb(46,124,208);
-    border: 3px solid rgb(46,124,208);
+    border: 3px solid var(--blue);
 
-    border-radius: 50px;
-    padding: 15px 25px;
+    border-radius: 10px;
 
-    font-size: 15px;
-    font-weight: bold;
-    
-    margin-right: 50px;
-    margin-bottom: 20px;
+    padding: 10px 20px;
+
+    margin-left: auto;
+
+    font-weight: 700;
 
     cursor: pointer;
 }
 
 #expense .input .add-expense:hover {
-    background-color: rgb(46,124,208);
+    background-color: var(--blue);
     color: white;
 }
 
 
-#all {
-    display: flex;
-    flex-direction: column;
 
-    width: 100%;
-    height: 80%;
-    
+
+
+
+
+
+
+
+
+
+#all {
+    display: grid;
+
+    padding: 0 60px;
 }
 
 #all .list {
     width: auto;
-    height: 75%;
     
     margin: 0;
     padding: 0;
 
-    margin-left: 7%;
-
     list-style: none;
+}
+
+#all .list li {
+    display: flex;
+    align-items: center;
+
+    margin-bottom: 15px;
+}
+
+#all .list li #edit {
+    padding: 10px 20px;
+
+    background-color: rgb(235,235,235);
+
+    border-radius: 10px;
+
+    margin-left: auto;
+    margin-right: 10px;
+}
+
+#all .list li #delete {
+    padding: 10px 20px;
+
+    background-color:  #f20505;
+    color: white;
+
+    border-radius: 10px;
 }
 
 
@@ -532,4 +582,139 @@ body {
 
 .hide {
     display: none !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-device-width: 500px) and (min-device-height: 500px) {
+    
+    html {
+        font-size: 13px;
+    }
+
+    .budget-container {
+        grid-template-columns: 100%;
+        grid-template-rows: 45% 55%;
+    }
+
+
+
+
+
+    .budget-header .balance {
+        margin: 20px 20px 7px 20px;
+    }
+
+    .budget-header .balance .value {
+        font-weight: 700;
+        font-size: 25px;
+    }
+    
+    .budget-header .balance .title {
+        font-size: 13px;
+    }
+
+
+
+
+
+    .budget-header .account {
+        grid-template-rows: 23% 77%;
+
+        margin: 7px 20px 7px 20px;
+    }
+
+
+
+
+
+    .budget-header .account .grid-container {
+        grid-template-rows: unset;
+        grid-template-columns: 50% 50%;
+    }
+
+
+
+
+
+    .budget-header .account .grid-container .chart {
+        align-self: center;
+        justify-self: end;
+
+        margin-right: 20px;
+    }
+
+    .budget-header .account .chart canvas {
+        width: 15vh;
+        height: 15vh;
+    }
+
+
+
+
+    
+
+    .budget-header .account .income_outcome {
+        flex-direction: column;
+
+        justify-self: start;
+
+        margin-left: 20px;
+    }
+
+    .budget-header .account .income_outcome .income .income-total {
+        font-size: 20px;
+        font-weight: 700;
+    }
+    
+    .budget-header .account .income_outcome .income .title {
+        font-size: 13px;
+    }
+
+    .budget-header .account .income_outcome .outcome .outcome-total {
+        font-size: 20px;
+        font-weight: 700;
+    }
+    
+    .budget-header .account .income_outcome .outcome .title {
+        font-size: 13px;
+    }
+
+
+
+
+
+
+
+    .budget-dashboard {
+        grid-template-rows: 13% 22% 65%;
+
+        margin: 7px 20px 20px 20px;
+    }
+
+    .budget-dashboard .toggle div {
+        padding: 10px 20px;
+    }
+
+    #expense {
+        grid-template-rows: 62% 38%;
+
+        padding: 0 30px;
+    }
+
+    #expense .list li {
+        margin-bottom: 10px;
+    }
 }
