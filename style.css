@@ -708,6 +708,16 @@ body {
         padding: 10px 20px;
     }
 
+    #income {
+        grid-template-rows: 62% 38%;
+
+        padding: 0 30px;
+    }
+
+    #income .list li {
+        margin-bottom: 10px;
+    }
+
     #expense {
         grid-template-rows: 62% 38%;
 
@@ -715,6 +725,14 @@ body {
     }
 
     #expense .list li {
+        margin-bottom: 10px;
+    }
+
+    #all {
+        padding: 0 30px;
+    }
+
+    #all .list li {
         margin-bottom: 10px;
     }
 }
