@@ -665,8 +665,8 @@ body {
     }
 
     .budget-header .account .chart canvas {
-        width: 15vh;
-        height: 15vh;
+        width: 13vh;
+        height: 13vh;
     }
 
 
@@ -751,7 +751,7 @@ body {
     }
 
     #income .input .add-income:hover {
-        background-color: none;
+        background-color: white;
         color: var(--blue);
     }
 
@@ -784,7 +784,7 @@ body {
     }
 
     #expense .input .add-expense:hover {
-        background-color: none;
+        background-color: white;
         color: var(--blue);
     }
 
@@ -798,5 +798,13 @@ body {
 
     #all .list li {
         margin-bottom: 10px;
+    }
+
+    #all .list li #edit {
+        padding: 7px 12px;
+    }
+
+    #all .list li #delete {
+        padding: 7px 12px;
     }
 }
