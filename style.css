@@ -344,6 +344,8 @@ body {
 
     margin-left: auto;
     margin-right: 10px;
+
+    cursor: pointer;
 }
 
 #income .list li #delete {
@@ -353,6 +355,8 @@ body {
     color: white;
 
     border-radius: 10px;
+
+    cursor: pointer;
 }
 
 
@@ -623,7 +627,7 @@ body {
     }
     
     .budget-header .balance .title {
-        font-size: 13px;
+        display: none;
     }
 
 
@@ -634,6 +638,10 @@ body {
         grid-template-rows: 23% 77%;
 
         margin: 7px 20px 7px 20px;
+    }
+
+    .budget-header .account .account-label {
+        padding-left: 17px;
     }
 
 
@@ -704,8 +712,16 @@ body {
         margin: 7px 20px 20px 20px;
     }
 
+    .budget-dashboard .dash-label {
+        padding-left: 17px;
+    }
+
     .budget-dashboard .toggle div {
-        padding: 10px 20px;
+        padding: 7px 12px;
+    }
+
+    .budget-dashboard .toggle div:hover {
+        color: initial;
     }
 
     #income {
@@ -718,6 +734,29 @@ body {
         margin-bottom: 10px;
     }
 
+    #income .list li #edit {
+        padding: 7px 12px;
+    }
+
+    #income .list li #delete {
+        padding: 7px 12px;
+    }
+
+    #income .input input {
+        padding: 7px 30px;
+    }
+
+    #income .input .add-income {
+        padding: 7px 12px;
+    }
+
+    #income .input .add-income:hover {
+        background-color: none;
+        color: var(--blue);
+    }
+
+    
+
     #expense {
         grid-template-rows: 62% 38%;
 
@@ -727,6 +766,31 @@ body {
     #expense .list li {
         margin-bottom: 10px;
     }
+
+    #expense .list li #edit {
+        padding: 7px 12px;
+    }
+
+    #expense .list li #delete {
+        padding: 7px 12px;
+    }
+
+    #expense .input input {
+        padding: 7px 30px;
+    }
+
+    #expense .input .add-expense {
+        padding: 7px 12px;
+    }
+
+    #expense .input .add-expense:hover {
+        background-color: none;
+        color: var(--blue);
+    }
+
+
+
+
 
     #all {
         padding: 0 30px;
