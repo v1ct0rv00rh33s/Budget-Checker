@@ -16,7 +16,35 @@
 :root {
     --blue: rgb(46,124,208);
     --purple: rgb(215,218,232);
+    --blood: #f20505;
 }
+
+
+
+::-webkit-scrollbar {
+    width: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: rgb(235,235,235);
+    border-radius: 50px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgb(180,180,180);
+    border-radius: 50px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(120,120,120);
+}
+
+
+
+
 
 
 
@@ -224,7 +252,7 @@ body {
     justify-content: center;
     align-items: center;
 
-    color: #f20505;
+    color: var(--blood);
 }
 
 .budget-header .account .income_outcome .outcome .outcome-total {
@@ -320,6 +348,8 @@ body {
 
 
 #income .list {
+    overflow: auto;
+
     width: auto;
     
     margin: 0;
@@ -335,29 +365,7 @@ body {
     margin-bottom: 15px;
 }
 
-#income .list li #edit {
-    padding: 10px 20px;
 
-    background-color: rgb(235,235,235);
-
-    border-radius: 10px;
-
-    margin-left: auto;
-    margin-right: 10px;
-
-    cursor: pointer;
-}
-
-#income .list li #delete {
-    padding: 10px 20px;
-
-    background-color:  #f20505;
-    color: white;
-
-    border-radius: 10px;
-
-    cursor: pointer;
-}
 
 
 
@@ -435,6 +443,8 @@ body {
 
 
 #expense .list {
+    overflow: auto;
+
     width: auto;
     
     margin: 0;
@@ -450,25 +460,7 @@ body {
     margin-bottom: 15px;
 }
 
-#expense .list li #edit {
-    padding: 10px 20px;
 
-    background-color: rgb(235,235,235);
-
-    border-radius: 10px;
-
-    margin-left: auto;
-    margin-right: 10px;
-}
-
-#expense .list li #delete {
-    padding: 10px 20px;
-
-    background-color:  #f20505;
-    color: white;
-
-    border-radius: 10px;
-}
 
 
 
@@ -543,10 +535,14 @@ body {
 }
 
 #all .list {
+    overflow: auto;
+
     width: auto;
     
     margin: 0;
     padding: 0;
+
+    margin-bottom: 50px;
 
     list-style: none;
 }
@@ -558,7 +554,7 @@ body {
     margin-bottom: 15px;
 }
 
-#all .list li #edit {
+#edit {
     padding: 10px 20px;
 
     background-color: rgb(235,235,235);
@@ -567,16 +563,32 @@ body {
 
     margin-left: auto;
     margin-right: 10px;
+
+    cursor: pointer;
 }
 
-#all .list li #delete {
+#edit:hover {
+    background-color: rgb(180,180,180);
+}
+
+#delete {
     padding: 10px 20px;
 
-    background-color:  #f20505;
+    background-color: var(--blood);
     color: white;
 
     border-radius: 10px;
+
+    cursor: pointer;
+
+    margin-right: 12px;
 }
+
+#delete:hover {
+    background-color: rgb(173,3,3);
+}
+
+
 
 
 
@@ -604,6 +616,10 @@ body {
 
 @media only screen and (max-device-width: 500px) and (min-device-height: 500px) {
     
+    ::-webkit-scrollbar {
+        width: 15px;
+    }
+
     html {
         font-size: 13px;
     }
@@ -734,14 +750,6 @@ body {
         margin-bottom: 10px;
     }
 
-    #income .list li #edit {
-        padding: 7px 12px;
-    }
-
-    #income .list li #delete {
-        padding: 7px 12px;
-    }
-
     #income .input input {
         padding: 7px 30px;
     }
@@ -767,14 +775,6 @@ body {
         margin-bottom: 10px;
     }
 
-    #expense .list li #edit {
-        padding: 7px 12px;
-    }
-
-    #expense .list li #delete {
-        padding: 7px 12px;
-    }
-
     #expense .input input {
         padding: 7px 30px;
     }
@@ -796,15 +796,19 @@ body {
         padding: 0 30px;
     }
 
+    #all .list {
+        margin-bottom: 30px;
+    }
+
     #all .list li {
         margin-bottom: 10px;
     }
 
-    #all .list li #edit {
+    #edit {
         padding: 7px 12px;
     }
 
-    #all .list li #delete {
+    #delete {
         padding: 7px 12px;
     }
 }
