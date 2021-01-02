@@ -439,10 +439,29 @@ h1,p {
     }
 
     #analysis .chart {
-        width: 180px;
-        height: 180px;
+        width: 140px;
+        height: 140px;
 
         margin-right: 20px;
+    }
+
+    #analysis .chart canvas {
+        width: 80%;
+    }
+
+    #board .buttons {
+        flex-direction: column;
+        justify-content: center;
+
+        height: 200px;
+    }
+
+    #board .buttons input {
+        margin: 0 0 10px 0;
+    }
+
+    #board .buttons div {
+        margin: 0;
     }
     
     
