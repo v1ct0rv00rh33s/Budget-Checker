@@ -1,5 +1,7 @@
+/* www.youtube.com/CodeExplained */
+
 // SELECT ELEMENTS
-const balanceEl = document.querySelector(".balance .value");
+const balanceEl = document.querySelector("#bar .value");
 const incomeTotalEl = document.querySelector(".income-total");
 const outcomeTotalEl = document.querySelector(".outcome-total");
 const incomeEl = document.querySelector("#income");
@@ -109,6 +111,7 @@ function deleteEntry(entry){
 }
 
 function editEntry(entry){
+    console.log(entry)
     let ENTRY = ENTRY_LIST[entry.id];
 
     if(ENTRY.type == "income"){

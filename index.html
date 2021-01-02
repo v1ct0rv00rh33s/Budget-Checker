@@ -1,103 +1,119 @@
 <!DOCTYPE html>
 <html>
 
+
 <head>
     <meta charset='UTF-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'/>
-    <link rel='stylesheet' href='style.css'/>
-    <title>Victor's Budget Checker</title>
 
-    <link rel='preconnect' href='https://fonts.gstatic.com'>
-    <link href='https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap' rel='stylesheet'>
+    <link rel='stylesheet' href='style.css'/>
+    <title>Moneymania: The Budgeting Web App by Victor Voorhees</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&display=swap" rel="stylesheet">
 </head>
+
+
 
 
 <body>
 
-
-
-    <div class='budget-container'>
-
-        <div class='budget-header'>
-
-            <div class='balance'>
-                <div class='value'>$0</div>
-                <div class='title'>Current Balance</div>
-            </div>
-            <div class='account'>
-                <div class='account-label'>
-                    Analysis
-                </div>
-                <div class='grid-container'>
-                    <div class='chart'>
-                    </div>
-                    <div class='income_outcome'>
-                        <div class='income'>
-                            <div class='income-total'>$0</div>
-                            <div class='title'>Total Income</div>
-                        </div>
-                        <div class='outcome'>
-                            <div class='outcome-total'>$0</div>
-                            <div class='title'>Total Spending</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <div class='budget-dashboard'>
-            <div class='dash-label'>
-                Dashboard
-            </div>
-
-            <div class='toggle'>
-                <div class='tab1'>Expenses</div>
-                <div class='tab2'>Income</div>
-                <div class='tab3 active'>All</div>
-            </div>
-
-            <div class='hide' id='income'>
-                <ul class='list'>
-                </ul>
-                <div class='input'>
-                    <input type='text' id='income-title-input' name='title' placeholder='Name'>
-                    <input type='number' id='income-amount-input' name='amount' placeholder='Amount'>
-                    <div class='add-income'>Add Item</div>
-                </div>
-            </div>
-
-            <div class='hide' id='expense'>
-                <ul class='list'></ul>
-                <div class='input'>
-                    <input type='text' id='expense-title-input' name='title' placeholder='Name'>
-                    <input type='number' id='expense-amount-input' name='amount' placeholder='Amount'>
-                    <div class='add-expense'>Add Item</div>
-                </div>
-            </div>
-
-            <div id='all'>
-                <ul class='list'></ul>
-            </div>
-        </div>
-
+    <div id='bar'>
+        <h1>MONEYMANIA</h1>
+        <div class='value'>$0</div>
     </div>
 
 
 
+    <div id='layout'>
+
+        <div id='analysis'>
+
+            <div class='chart'></div>
+
+            <div class='wrapper'>
+                <div class='income'>
+                    <div class='dot'></div>
+                    <div class='legend'>
+                        <h1>Income</h1>
+                        <p class='income-total'>$0</p>
+                    </div>
+                </div>
+    
+                <div class='expenses'>
+                    <div class='dot'></div>
+                    <div class='legend'>
+                        <h1>Expenses</h1>
+                        <p class='outcome-total'>$0</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
 
 
 
 
 
 
+        <div id='board'>
+
+            <div class='toggle'>
+                <div class='tab1'>Expenses</div>
+                <div class='tab2' >Income</div>
+                <div class='tab3 active'>All</div>
+            </div>
+
+
+
+
+
+            <div class='hide' id='expense'>
+                <div class='dashboard'>
+                    <ul class='list'></ul>
+                </div>
+                <div class='buttons'>
+                    <input type='text' id='expense-title-input' name='title' placeholder='Name'>
+                    <input type='number' id='expense-amount-input' name='amount' placeholder='Amount'>
+                    <div class='add-expense'>Add</div>
+                </div>
+            </div>
+
+
+
+
+
+            <div class='hide' id='income'>
+                <div class='dashboard'>
+                    <ul class='list'></ul>
+                </div>
+                <div class='buttons'>
+                    <input type='text' id='income-title-input' name='title' placeholder='Name'>
+                    <input type='number' id='income-amount-input' name='amount' placeholder='Amount'>
+                    <div class='add-income'>Add</div>
+                </div>
+            </div>
 
 
 
 
 
 
+            <div id='all'>
+                <div class='dashboard'>
+                    <ul class='list'></ul>
+                </div>
+            </div>
 
+
+
+
+            
+
+        </div>
+
+    </div>
 
 
 
@@ -121,9 +137,14 @@
 
 
 
-
-
 </body>
+
+
+
+
+
+
+
 
 
 
