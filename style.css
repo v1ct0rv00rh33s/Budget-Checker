@@ -64,7 +64,7 @@ h1,p {
     display: grid;
     grid-template-columns: auto 1fr;
     
-    height: 550px;
+    min-height: 550px;
 
     padding: 50px;
 }
@@ -75,6 +75,7 @@ h1,p {
     border-radius: 10px;
 
     width: 300px;
+    max-height: 550px;
 
     margin-right: 25px;
 
@@ -320,10 +321,6 @@ h1,p {
 
 
 .list {
-    overflow: auto;
-
-    width: auto;
-    
     margin: 0;
     padding: 30px 40px;
 
@@ -346,7 +343,7 @@ h1,p {
 
 
 
-
+/*
 #edit {
     padding: 10px 20px;
 
@@ -363,6 +360,11 @@ h1,p {
 #edit:hover {
     background-color: rgb(180,180,180);
 }
+*/
+
+#edit {
+    display: none;
+}
 
 #delete {
     padding: 10px 20px;
@@ -372,9 +374,9 @@ h1,p {
 
     border-radius: 10px;
 
-    cursor: pointer;
+    margin-left: auto;
 
-    margin-right: 12px;
+    cursor: pointer;
 }
 
 #delete:hover {
