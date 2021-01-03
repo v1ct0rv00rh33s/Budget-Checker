@@ -1,7 +1,7 @@
 /* www.youtube.com/CodeExplained */
 
 // SELECT ELEMENTS
-const balanceEl = document.querySelector("#bar .value");
+const balanceEl = document.querySelector(".balance-total");
 const incomeTotalEl = document.querySelector(".income-total");
 const outcomeTotalEl = document.querySelector(".outcome-total");
 const incomeEl = document.querySelector("#income");
