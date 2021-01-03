@@ -2,6 +2,7 @@
     --blue: #004785;
     --red: #a90533;
     --lblue: rgb(238,243,246);
+    --llblue: rgb(220,231,237);
 }
 
 
@@ -18,6 +19,7 @@ html,body {
     background-color: var(--lblue);
 
     font-family: 'Fira Sans';
+    font-size: 18px;
 }
 
 h1,p {
@@ -37,50 +39,76 @@ h1,p {
 
 #bar {
     display: flex;
-    justify-content: space-between;
     align-items: center;
 
     position: sticky;
 
-    height: 80px;
+    height: 70px;
 
-    padding: 0 40px;
+    padding: 0 30px;
 
     background-color: var(--blue);
     color: white;
 }
 
+#bar img {
+    height: 40px;
+}
+
 #bar h1 {
-    font-family: 'Josefin Sans';
-    font-size: 20px;
+    margin-left: 10px;
+
+    font-size: 18px;
     font-weight: 400;
 }
 
 #bar div {
-    font-size: 22px;
+    margin-left: auto;
 }
+
+
+
+
+
+
+
+
 
 #layout {
     display: grid;
     grid-template-columns: auto 1fr;
     
-    min-height: 550px;
+    min-height: 540px;
 
-    padding: 50px;
+    padding: 70px;
 }
 
+
+
+
+.label {
+    padding: 20px;
+
+    background-color: var(--blue);
+    color: white;
+
+    text-align: left;
+}
 
 
 #analysis {
-    border-radius: 10px;
+    border-bottom: 6px solid var(--llblue);
 
-    width: 300px;
-    max-height: 550px;
+    width: 250px;
 
-    margin-right: 25px;
+    margin-right: 35px;
 
     background-color: white;
+
+    text-align: center;
 }
+
+
 
 #analysis .chart {
     display: flex;
@@ -88,11 +116,11 @@ h1,p {
     align-items: center;
 
     width: 100%;
-    height: 350px;
+    height: 230px;
 }
 
 #analysis .chart canvas {
-    width: 60%;
+    width: 55%;
 }
 
 
@@ -101,71 +129,45 @@ h1,p {
 
 
 
-#analysis .wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#analysis h1 {
+    font-size: 19px;
 }
 
-
-
-
+#analysis p {
+    color: rgb(180,180,180);
+}
 
 
 
 
 
 #analysis .income, .expenses {
-    display: flex;
-}
-
-#analysis .dot {
-    border-radius: 50%;
-
-    width: 10px;
-    height: 10px;
-
-    margin: 7px 10px 0 0;
-}
-
-#analysis .legend {
-    width: 95px;
-}
-
-#analysis .legend h1 {
-    font-size: 20px;
-}
-
-#analysis .legend p {
-    color: rgb(180,180,180);
-
-    font-size: 17px;
-}
-
-
-
-#analysis .income {
     margin-bottom: 20px;
 }
 
 
 
-#analysis .income .dot {
-    background-color: var(--blue);
-}
 
-#analysis .income .legend h1 {
+
+#analysis .income h1 {
     color: var(--blue);
 }
 
-
-
-#analysis .expenses .dot {
-    background-color: var(--red);
-}
-
-#analysis .expenses .legend h1 {
+#analysis .expenses h1 {
     color: var(--red);
 }
 
@@ -181,8 +183,11 @@ h1,p {
 
 #board {
     display: grid;
-    grid-template-rows: auto 1fr;
+    grid-template-rows: auto auto 1fr;
 }
+
+
+
 
 
 
@@ -190,23 +195,32 @@ h1,p {
 
 
 #board .toggle {
-    display: flex;
-    
-    width: fit-content;
-
-    margin: auto;
-
-    border-radius: 7px;
+    padding: 30px 0;
 
     background-color: white;
 }
 
+#board .toggle .frame {
+    display: flex;
+    justify-content: center;
+
+    border: 3px solid var(--blue);
+    border-radius: 7px;
+
+    width: fit-content;
+
+    padding: 0;
+    margin: auto;
+}
+
 #board .toggle div {
-    padding: 15px 25px;
+    padding: 10px 20px;
 
     color: rgb(150,150,150);
 
     cursor: pointer;
+
+    margin: -1px;
 }
 
 #board .toggle div:hover {
@@ -214,12 +228,8 @@ h1,p {
 }
 
 .active {
-    border-radius: 7px;
-
     color: white !important;
     background-color: var(--blue) !important;
-
-    font-weight: 500;
 }
 
 
@@ -230,25 +240,55 @@ h1,p {
 
 #expense, #income {
     display: grid;
-    grid-template-rows: 1fr auto;
+    grid-template-rows: auto 1fr;
 }
 
 #all {
     display: grid;
     grid-template-rows: 1fr;
-}
-
-
-
-
-
-#board .dashboard {
-    border-radius: 7px;
-
-    margin: 20px 0;
 
     background-color: white;
 }
+
+#expense .container, .buttons {
+    background-color: white;
+    border-bottom: 6px solid var(--llblue);
+}
+
+#income .container, .buttons {
+    background-color: white;
+    border-bottom: 6px solid var(--llblue);
+}
+
+#all .container {
+    border-bottom: 6px solid var(--llblue);
+}
+
+#all .dashboard {
+    background-color: white;
+}
+
+#board .container {
+    padding-bottom: 42px;
+}
+
+#board .container .dashboard {
+    height: 198px;
+
+    overflow: auto;
+}
+
+#all .container .dashboard {
+    height: 310px;
+}
+
+
+
+
+
+
+
+
 
 
 
@@ -257,11 +297,10 @@ h1,p {
     display: flex;
     align-items: center;
 
-    border-radius: 7px;
+    border-bottom: 6px solid var(--llblue);
 
-    height: 100px;
-
-    padding: 0 20px;
+    padding: 0 10px;
+    margin-top: 30px;
 
     background-color: white;
 }
@@ -270,12 +309,12 @@ h1,p {
     border: none;
     outline: none;
 
-    border-radius: 7px;
+    border-radius: 0;
 
     width: 120px;
     height: 40px;
 
-    margin-left: 10px;
+    margin-left: 20px;
     padding-left: 20px;
 
     background-color: rgb(240,240,240);
@@ -285,13 +324,14 @@ h1,p {
 
 #board .buttons input::placeholder {
     font-family: 'Fira Sans';
+    font-size: 18px;
 }
 
 #board .buttons div {
-    margin: 0 10px 0 auto;
-    padding: 10px 20px;
+    border-bottom: 5px solid black;
 
-    border-radius: 7px;
+    margin: 0 20px 0 auto;
+    padding: 10px 20px;
 
     background-color: var(--blue);
     color: white;
@@ -322,7 +362,7 @@ h1,p {
 
 .list {
     margin: 0;
-    padding: 30px 40px;
+    padding: 0 40px;
 
     list-style: none;
 }
@@ -331,7 +371,7 @@ h1,p {
     display: flex;
     align-items: center;
 
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 
@@ -367,12 +407,12 @@ h1,p {
 }
 
 #delete {
+    border-bottom: 5px solid black;
+
     padding: 10px 20px;
 
     background-color: var(--red);
     color: white;
-
-    border-radius: 10px;
 
     margin-left: auto;
 
@@ -421,49 +461,130 @@ h1,p {
 
 @media (max-width: 900px) {
 
+    html,body {
+        font-size: 14px;
+    }
+
+    #bar {
+        height: 60px;
+
+        padding: 0 20px;
+    }
+
+    #bar img {
+        width: 30px;
+    }
+
+    #bar h1 {
+        font-size: 14px;
+    }
+
+
+
+    
+
     #layout {
         grid-template-columns: unset;
         grid-template-rows: auto 1fr;
 
         height: 900px;
+
+        padding: 40px;
+    }
+
+    .label {
+        padding: 15px;
     }
 
     #analysis {
+        display: grid;
+        grid-template-rows: auto 1fr;
+
+        width: 100%;
+        height: 220px;
+
+        margin-right: 0;
+        margin-bottom: 25px;
+    }
+
+    #analysis .wrap-one {
         display: flex;
         justify-content: center;
         align-items: center;
-
-        width: 100%;
-        height: 200px;
-
-        margin-bottom: 40px;
-        margin-right: 0;
     }
 
     #analysis .chart {
         width: 140px;
         height: 140px;
-
-        margin-right: 20px;
     }
 
     #analysis .chart canvas {
         width: 80%;
     }
 
+    #analysis .wrap-two {
+        margin: 0 15px;
+    }
+
+    #analysis .income, .expenses {
+        margin-bottom: 10px;
+    }
+
+    #analysis h1 {
+        font-size: 15px;
+    }
+
+
+
+
+
+
+
+
+
+    
+
+    #board .toggle div {
+        padding: 7px 15px;
+        margin: -1.5px;
+    }
+
+    #board .container .dashboard {
+        height: 225px;
+    }
+
+    #all .container .dashboard {
+        height: 440px;
+    }
+
+
     #board .buttons {
         flex-direction: column;
         justify-content: center;
-
-        height: 200px;
     }
 
     #board .buttons input {
+        width: 250px;
+        height: 35px;
+
         margin: 0 0 10px 0;
     }
 
+    #board .buttons input::placeholder {
+        font-size: 14px;
+    }
+
     #board .buttons div {
-        margin: 0;
+        margin: 15px 0 0 0;
+        padding: 7px 35px;
+    }
+
+
+
+
+
+    #delete {
+        padding: 7px 15px;
     }
     
     
